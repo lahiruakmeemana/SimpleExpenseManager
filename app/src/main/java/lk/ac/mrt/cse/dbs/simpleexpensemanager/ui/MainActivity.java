@@ -1,4 +1,4 @@
-/*
+00/*
  * Copyright 2015 Department of Computer Science and Engineering, University of Moratuwa.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         /***  Begin generating dummy data for In-Memory implementation  ***/
-        expenseManager = new InMemoryDemoExpenseManager();
+        expenseManager = new PersistanceExpenseManager(getApplicationContext());
         /*** END ***/
     }
 
