@@ -1,4 +1,12 @@
-public class DbHelper extends SQLiteOpenHelper implements Serializable {
+package lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import java.io.Serializable;
+
+
+public class DbHelper extends SQLiteOpenHelper implements Serializable{
 
     private static final String CREATE_ACCOUNT_ENTRIES = "CREATE TABLE Account_table ( Acc_no TEXT PRIMARY KEY, Bank TEXT, Holder TEXT, Balance REAL)";
     

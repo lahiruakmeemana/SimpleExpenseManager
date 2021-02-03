@@ -4,15 +4,15 @@ import android.content.Context;
 
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.AccountDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.TransactionDAO;
-import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistanceAccountDAO;
-import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistanceTransactionDAO;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentAccountDAO;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentTransactionDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 
-public class PersistanceExpenseManager extends ExpenseManager{
+public class PersistentExpenseManager extends ExpenseManager{
 
     private transient Context context;
 
-    public PersistanceExpenseManager(Context context) {
+    public PersistentExpenseManager(Context context) {
         this.context = context;
         setup();
     }
@@ -20,11 +20,11 @@ public class PersistanceExpenseManager extends ExpenseManager{
     @Override
     public void setup() {
         
-        TransactionDAO PersistanceTransactionDAO = new PersistanceTransactionDAO(context);
-        setTransactionsDAO(PersistanceTransactionDAO);
+        TransactionDAO PersistentTransactionDAO = new PersistentTransactionDAO(context);
+        setTransactionsDAO(PersistentTransactionDAO);
 
-        AccountDAO PersistanceAccountDAO = new PersistanceAccountDAO(context);
-        setAccountsDAO(PersistanceAccountDAO);
+        AccountDAO PersistentAccountDAO = new PersistentAccountDAO(context);
+        setAccountsDAO(PersistentAccountDAO);
 
         // dummy data
         Account dummyAcct1 = new Account("12345A", "Yoda Bank", "Anakin Skywalker", 10000.0);

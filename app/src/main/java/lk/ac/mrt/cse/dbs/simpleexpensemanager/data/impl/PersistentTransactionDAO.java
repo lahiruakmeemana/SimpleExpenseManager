@@ -15,11 +15,11 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.TransactionDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Transaction;
 
-public class PersistanceTransactionDAO implements TransactionDAO,Serializable {
+public class PersistentTransactionDAO implements TransactionDAO,Serializable {
     private SQLiteOpenHelper helper;
 
-    public PersistanceTransactionDAO(Context context) {
-        helper = new SQLiteOpenHelper(context);
+    public PersistentTransactionDAO(Context context) {
+        helper = new DbHelper(context);
     }
 
     @Override

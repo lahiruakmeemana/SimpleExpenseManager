@@ -15,11 +15,11 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 
 
-public class PersistanceAccountDAO implements AccountDAO,Serializable {
+public class PersistentAccountDAO implements AccountDAO,Serializable {
 
     private SQLiteOpenHelper dbHelper;
 
-    public PersistanceAccountDAO(Context context) {
+    public PersistentAccountDAO(Context context) {
         dbHelper = new DbHelper(context);
     }
 
